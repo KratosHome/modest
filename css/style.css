@@ -57,8 +57,6 @@ header {
 }
 .borderA a {
 	border: 2px solid #23b7a4;
-	border-radius: 5%;
-	padding: 5px;
 	border-radius: 5px;
 }
 .menu a:hover {
@@ -76,12 +74,12 @@ input {
 	background-color: #1d2126;
 	color: #939c9c;
 	text-transform: uppercase;
-	background: url("/img/icon_1.png") no-repeat 150px;
+	background: url(../img/icon_1.png) no-repeat 150px;
 	margin-left: auto;
 }
 
 .slider {
-	background-image: url(/img/img_2.png);
+	background: url(../img/img_2.png);
 	background-size: cover;
 	height: 600px;
 }
@@ -116,4 +114,39 @@ h1 {
 }
 .slider_button button:hover {
 	background-color: #23b7a4;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+	.contauner {
+		display: block;
+		max-width: 768px;
+	}
+	.col-mob-12 {
+		max-width: 100%;
+	}
+	.logo {
+		margin-top: -30px;
+		display: flex;
+		justify-content: center;
+	}
+	.menu {
+		padding-bottom: 10px;
+		justify-content: center;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+	.borderA {
+	}
+	.search {
+		display: none;
+	}
+	.slider {
+		display: flex;
+	}
+}
+@media (max-width: 425px) {
+	.menu {
+		justify-content: start;
+	}
 }
