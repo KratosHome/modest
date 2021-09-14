@@ -1,0 +1,27 @@
+@import "./virebls";
+@import "./mixin";
+
+* {
+	box-sizing: border-box;
+}
+header {
+	text-align: center;
+	line-height: 100px;
+	background-color: purple;
+	color: white;
+}
+.row {
+	display: flex;
+	justify-content: center;
+}
+
+.wteher_block {
+	background-color: blueviolet;
+	width: 400px;
+	height: auto;
+	justify-content: space-around;
+	color: white;
+	div {
+		padding: 5px;
+	}
+}
