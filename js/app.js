@@ -1,49 +1,17 @@
+let temperature = document.getElementsByClassName("temperature")
 
-
-
-class Artical {
-	constructor(description, icon, parent) {
-		this.description = description
-		this.wther_img = icon;
-		this.parent = document.querySelector(parent);
-	}
-	render() {
-		let article = document.createElement("article")
-		article.innerHTML = `
-		<div class="row wteher_block">
-		<div class="section_one">
-			<div class="data">jun 13,2015-sat</div>
-			<div class="time">SUN 8:30 AM</div>
-			<div class="time_two">3:02 RM</div>
-			<div class="humidity">Humidity: 57%</div>
-			<div class="pressure">Pressure: 1015 hPa</div>
-			<div class="wind">Wind: 14 km/h SSE</div>
-		</div>
-		<div class="secctoin_two">
-			<div class="wther_img">
-				<img src=${this.icon} alt="">
-			</div>
-			<div class="temperature">
-				30C
-			</div>
-			<div class="feels">Feels Like: 32C</div>
-			<div class="description">${this.description + " bla bla"}</div>
-		<div div class="data_two" > Jun 13 11: 02 PM</div >
-		</div >
-	</div >
-	`;
-		this.parent.append(article)
-	}
-};
 
 fetch(`http://api.openweathermap.org/data/2.5/weather?q=KYIV&units=metric&APPID=5d066958a60d315387d9492393935c19`)
-	.then((response) => response.json())
-	.then((data) => {
-		// data.products.map((item) => (new Artical(item.icon, item.description, item.parent).render()));
-		console.log(data)
-		new Artical(this.description, this.icon, this.parent).render()
-	}
-	);
+.then((response) => response.json())
+.then((data) => {
+	temperature.innerHTML = (data.main.temp)
+	console.log(data.main.temp)
+	console.log(data)
+}
+);
+
+temperature.innerHTML = "data.main.temp"
+
 
 /*
 fetch(`http://api.openweathermap.org/data/2.5/weather?q=KYIV&units=metric&APPID=5d066958a60d315387d9492393935c19`)
